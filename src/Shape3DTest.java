@@ -99,12 +99,11 @@ class Shape3DTest {
         assertEquals(15.625, cube.getVolume(), 0.001);
     }
 
-    // is Cube a derived class?  it should be.
+    // is Cube a derived class of RectangularPrism?  it should be.
     @Test
     public void testCubeIsDerived() {
         Cube cube = new Cube(1.0);
-        Class cls = cube.getClass();
-        assertNotNull(cls.getSuperclass());
+        assertEquals("RectangularPrism", cube.getClass().getSuperclass().getSimpleName());
     }
 
     // Cube should have implemented the Shape3D interface
@@ -482,12 +481,11 @@ class Shape3DTest {
         assertEquals(12.5, sp.getVolume(), 0.001);
     }
 
-    // is SquarePyramid a derived class?  it should be.
+    // is SquarePyramid a derived class of RectangularPyramid?  it should be.
     @Test
     public void testSquarePyramidIsDerived() {
         SquarePyramid sp = new SquarePyramid(1.0, 1.0);
-        Class cls = sp.getClass();
-        assertNotNull(cls.getSuperclass());
+        assertEquals("RectangularPyramid", sp.getClass().getSuperclass().getSimpleName());
     }
 
     // SquarePyramid should have implemented the Shape3D interface
